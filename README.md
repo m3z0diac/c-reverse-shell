@@ -1,6 +1,6 @@
 ## About this simple low level reverse shell
 #### introduction
-the main thing in exploit developement, malware analyse or any other topic is how to deal with remote servers or machines, so that you have to be familiar with the SOCKETs.
+the main thing in exploit developement, malware analyse or any other topic when you are writing an exploit is how to deal with remote servers or machines and receive/ send data, so that you have to be familiar with the SOCKETs.
 
 socket is a software structure within a network node of a computer network that serves as an endpoint for sending and receiving data across the network
 
