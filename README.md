@@ -1,13 +1,13 @@
 ## About this simple low level reverse shell
 #### introduction
 the main thing in exploit developement, malware analyse or any other topic is how to deal with remote servers or machines, so that you have to be familiar with the SOCKETs.
----
+
 socket is a software structure within a network node of a computer network that serves as an endpoint for sending and receiving data across the network
----
+
 recognize that we talk about the low level language like c/c++. so first of all you have to install all prerequired stuff, an IDE, a compiler and a debugger which you can find them [here](https://code.visualstudio.com/docs/languages/cpp#_install-a-compiler)
 
 #### The functions I've used
-1. [ShowWindow] (https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjh_t6mjP35AhXFglwKHcEcBgwQFnoECAQQAw&url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fwindows%2Fwin32%2Fapi%2Fwinuser%2Fnf-winuser-showwindow&usg=AOvVaw0m88U6DTLNGTpAJUXh7Wlp)
+1. [ShowWindow](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjh_t6mjP35AhXFglwKHcEcBgwQFnoECAQQAw&url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fwindows%2Fwin32%2Fapi%2Fwinuser%2Fnf-winuser-showwindow&usg=AOvVaw0m88U6DTLNGTpAJUXh7Wlp)
 ```c
 ShowWindow( GetConsoleWindow(), SW_HIDE ); // hide the console of the current process from the user interface and run it in the background
 ```
